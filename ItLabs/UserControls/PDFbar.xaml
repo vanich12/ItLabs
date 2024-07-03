@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ItLabs.UserControls.PDFbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="PDF">
+    <Grid Grid.Column="{Binding Column, ElementName=PDF}">
+        <Image Grid.Column="{Binding Column, ElementName=PDF}" Source="{Binding ImageSource, ElementName=PDF}" Stretch="Fill"/>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20">
+            <Image Source="{Binding IconSource, ElementName=PDF}" Width="241" Height="123"/>
+        </StackPanel>
+        <Button Style="{StaticResource TransparentBtn}"
+                VerticalAlignment="Bottom"
+                Content="{Binding ButtonContent, ElementName=PDF}"
+                Margin="0,0,0,50"
+                Padding="10,5"
+                FontSize="16"
+                FontFamily="{StaticResource MontserratRegular}"
+                Command="{Binding ViewPdfCommand, ElementName=PDF}"
+                Height="72"
+                Width="250"
+                Foreground="#fbb911"/>
+    </Grid>
+</UserControl>

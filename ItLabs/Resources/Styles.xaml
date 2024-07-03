@@ -1,0 +1,81 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:conv="clr-namespace:ItLabs.Converters">
+    <conv:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <Style x:Key="TextBoxWithPlaceholder" TargetType="TextBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <TextBox Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 x:Name="TB"
+                                 Margin="0 50 0 0"
+                                 Background="{TemplateBinding Background}"
+                                 Foreground="{TemplateBinding Foreground}"
+                                 VerticalAlignment="Stretch"
+                                 CaretBrush="White"
+                                 BorderThickness="0"/>
+                        <TextBlock Text="{TemplateBinding Tag}"
+                                   Foreground="Gray"
+                                   Margin="0 0 0 10"
+                                   VerticalAlignment="Center"
+                                   FontStyle="Italic"
+                                   FontFamily="{TemplateBinding FontFamily}"
+                                   Visibility="{Binding Path=Text, ElementName=TB, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                   />
+                        <Border Background="Gray" 
+                                Height="1"
+                                Width="{Binding ActualWidth, ElementName=TB}"
+                                VerticalAlignment="Bottom"
+                                Margin="0,0,5,0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Focusable" Value="True"/>
+        <Setter Property="Cursor" Value="IBeam"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="0 0 0 65"/>
+    </Style>
+
+    <Style x:Key="DefaultButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <TextBlock 
+                        FontFamily="{TemplateBinding FontFamily}"
+                        Text="{TemplateBinding Content}"
+                        Foreground="{TemplateBinding Foreground}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Button" x:Key="ConfirmBtn" BasedOn="{StaticResource DefaultButton}">
+        <Setter Property="Background" Value="#fbb911"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Button" x:Key="TransparentBtn" BasedOn="{StaticResource DefaultButton}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="#fbb911"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+ 
+</ResourceDictionary>
