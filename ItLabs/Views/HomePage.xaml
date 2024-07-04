@@ -4,85 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ItLabs.Views"
+        SizeChanged="Page_SizeChanged"
         mc:Ignorable="d"
         d:Width="1920"
         d:Height="1080"
         MouseDown="Window_MouseDown"
         Title="HomePage"  Background="Black">
     <Page.Resources>
-        <!-- Стиль для закругленной кнопки -->
-        <Style x:Key="RoundedButtonStyle" TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="2" 
-                                CornerRadius="47"
-                            Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="LightGray"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="Transparent"/>
-        </Style>
-        <Style x:Key="RoundedTextBlockBorderStyle" TargetType="Border">
-            <Setter Property="CornerRadius" Value="70"/>
-            <!-- Закругленные края -->
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="White"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="Padding" Value="70,20"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="SnapsToDevicePixels" Value="True"/>
-        </Style>
-
-        <!-- Стиль для TextBlock -->
-        <Style x:Key="RoundedTextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="48"/>
-
-            <Setter Property="Foreground" Value="#aeaeae"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-
-        <ControlTemplate x:Key="DashedBorderTemplate">
-            <Grid>
-                <Rectangle Stroke="{TemplateBinding BorderBrush}"
-                           StrokeThickness="{TemplateBinding BorderThickness}"
-                           StrokeDashArray="2 2"
-                           StrokeDashCap="Square"
-                           StrokeStartLineCap="Round"
-                           StrokeEndLineCap="Round"/>
-                <ContentPresenter/>
-            </Grid>
-        </ControlTemplate>
-
-        <!-- Стиль для Border с пунктирной рамкой -->
-
         <BitmapImage x:Key="IWT" UriSource="/Source/IWT_logo.png"/>
         <BitmapImage x:Key="RED" UriSource="/Source/RED_logo.png"/>
         <BitmapImage x:Key="BIWT" UriSource="/Source/VectorIWT.png"/>
         <BitmapImage x:Key="BRED" UriSource="/Source/BRED.png"/>
     </Page.Resources>
-    <Viewbox>
+    <Viewbox x:Name="MainViewBox" Stretch="Fill">
       <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*" MinWidth="134"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="*" MinWidth="134"/>
+            <ColumnDefinition Width="2*" MinWidth="134"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="2*" MinWidth="134"/>
             <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -91,20 +31,21 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Image Source="{StaticResource BIWT}" 
+        <Image x:Name="IWT" Source="{StaticResource BIWT}" 
            Grid.Column="0" Grid.RowSpan="3"
            VerticalAlignment="Stretch" Margin="-100 0 0 80" HorizontalAlignment="Left"
            Stretch="Uniform" >
             <Image.RenderTransform>
-                    <TranslateTransform X="-0"/>
+                    <TranslateTransform X="-10"/>
                 </Image.RenderTransform>
         </Image>
-            
-            <Image  Source="{StaticResource BRED}" Grid.Column="4" Grid.RowSpan="3"
-            HorizontalAlignment="Right"
-            Stretch="None"/>
 
-            <StackPanel MaxWidth="1109" Grid.Column ="2" Grid.Row="1" Grid.RowSpan="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Image x:Name="RED" Source="{StaticResource BRED}" Grid.Column="4" Grid.RowSpan="3"
+            HorizontalAlignment="Right"
+            Stretch="None">
+            </Image>
+
+            <StackPanel x:Name="MainStackPanel" MaxWidth="1109" Grid.Column ="2" Grid.Row="1" Grid.RowSpan="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                 <TextBlock Text="ИННОВАЦИОННЫЕ ОРУЖЕЙНЫЕ ТЕХНОЛОГИИ"
                    Foreground="White" FontSize="72" FontWeight="Bold"
                    Margin="30,20"
@@ -113,7 +54,7 @@
 
 
                 <Grid Grid.Column="2" Grid.Row="1">
-                    <Border Margin="160,30,160,0" HorizontalAlignment="Center" Style="{StaticResource RoundedTextBlockBorderStyle}">
+                    <Border Margin="170,30,170,0" HorizontalAlignment="Center" Style="{StaticResource RoundedTextBlockBorderStyle}">
                         <TextBlock Text="Нажмите на экран, чтобы продолжить"
                    FontFamily="{StaticResource MontserratLight}"
                    TextWrapping="Wrap"

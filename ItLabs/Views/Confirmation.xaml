@@ -7,6 +7,7 @@
       xmlns:vm="clr-namespace:ItLabs.ViewModels"
       xmlns:conv="clr-namespace:ItLabs.Converters"
       xmlns:control="clr-namespace:ItLabs.UserControls"
+      SizeChanged="Page_SizeChanged"
       Background="Black"
          mc:Ignorable="d"
         d:Width="1920"
@@ -49,7 +50,7 @@
         <BitmapImage x:Key="IWT" UriSource="/Source/IWT_logo.png"/>
         <BitmapImage x:Key="RED" UriSource="/Source/RED_logo.png"/>
     </Page.Resources>
-    <Viewbox>
+    <Viewbox Stretch="Fill">
         <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*" MinWidth="270"/>
@@ -64,11 +65,11 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-            <control:PDFbar Grid.Column="3" ImageSource="{StaticResource BACK1}" IconSource="{StaticResource IWT}" ButtonContent="Просмотреть PDF-файл"/>
-            <control:PDFbar Grid.Column="4" ImageSource="{StaticResource BACK2}" IconSource="{StaticResource RED}" ButtonContent="Просмотреть PDF-файл"/>
+            <control:PDFbar Grid.Column="3" x:Name="PDFbar1" ImageSource="{StaticResource BACK1}" IconSource="{StaticResource IWT}" ButtonContent="Просмотреть PDF-файл"/>
+            <control:PDFbar Grid.Column="4" x:Name="PDFbar2" ImageSource="{StaticResource BACK2}" IconSource="{StaticResource RED}" ButtonContent="Просмотреть PDF-файл"/>
 
 
-        <StackPanel HorizontalAlignment="Center" MaxWidth="710" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0">
+        <StackPanel x:Name="MainStackPanel" HorizontalAlignment="Center" MaxWidth="710" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0">
 
             <TextBlock Text="ПОДТВЕРДИТЬ УКАЗАННЫЙ НОМЕР ТЕЛЕФОНА"
            TextWrapping="Wrap"

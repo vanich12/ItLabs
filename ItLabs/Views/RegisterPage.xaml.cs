@@ -29,6 +29,28 @@ namespace ItLabs.Views
             DataContext = _viewModel;
         }
 
+        private void OnPageSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (e.NewSize.Width <= 700 && !e.HeightChanged)
+            {
+                PDFbar1.Visibility = Visibility.Collapsed;
+                PDFbar2.Visibility = Visibility.Collapsed;
+                MainStackPanel.Visibility = Visibility.Visible;
+                MainStackPanel.Margin = new Thickness(20);
+                Grid.SetColumn(MainStackPanel,2);
+                Grid.SetColumnSpan(MainStackPanel, 3);
+
+            }
+            else
+            {
+                PDFbar1.Visibility = Visibility.Visible;
+                PDFbar2.Visibility = Visibility.Visible;
+                MainStackPanel.Visibility = Visibility.Visible;
+                Grid.SetColumn(MainStackPanel, 3);
+                Grid.SetColumnSpan(MainStackPanel, 1);
+                MainStackPanel.Margin = new Thickness(20);
+            }
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.SendingFormCommand.Execute(null);
@@ -38,5 +60,6 @@ namespace ItLabs.Views
             }
            
         }
+
     }
 }

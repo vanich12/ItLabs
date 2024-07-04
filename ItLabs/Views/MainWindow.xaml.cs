@@ -23,6 +23,15 @@ namespace ItLabs.Views
         {
             InitializeComponent();
             MainFrame.Navigate(new HomePage());
+            this.MinWidth = 450;
+        }
+        
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

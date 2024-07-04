@@ -9,6 +9,7 @@
           d:Width="1920"
           d:Height="1080"
       Title="QRCatalogPage" 
+      SizeChanged="Page_SizeChanged"
       Background="Black">
     <Page.Resources>
         <BitmapImage x:Key="BACK1" UriSource="/Source/sixWarMan.png"/>
@@ -18,7 +19,7 @@
         <BitmapImage x:Key="IWT" UriSource="/Source/IWT_logo.png"/>
         <BitmapImage x:Key="RED" UriSource="/Source/RED_logo.png"/>
     </Page.Resources>
-    <Viewbox>
+    <Viewbox Stretch="Fill">
         <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -34,10 +35,10 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
             
-            <control:PDFbar Grid.Column="0" ImageSource="{StaticResource BACK1}" IconSource="{StaticResource IWT}" ButtonContent="Просмотреть PDF-файл"/>
-            <control:PDFbar Grid.Column="1" ImageSource="{StaticResource BACK2}" IconSource="{StaticResource RED}" ButtonContent="Просмотреть PDF-файл"/>
+            <control:PDFbar Grid.Column="0" x:Name="PDFbar1" ImageSource="{StaticResource BACK1}" IconSource="{StaticResource IWT}" ButtonContent="Просмотреть PDF-файл"/>
+            <control:PDFbar Grid.Column="1" x:Name="PDFbar2" ImageSource="{StaticResource BACK2}" IconSource="{StaticResource RED}" ButtonContent="Просмотреть PDF-файл"/>
 
-            <StackPanel Grid.Column="3" MaxWidth="700" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel x:Name="MainStackPanel" Grid.Column="3" MaxWidth="700" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock 
             Text="ФАЙЛ УСПЕШНО ОТПРАВЛЕН" 
             FontSize="42" 

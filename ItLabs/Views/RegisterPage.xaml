@@ -1,17 +1,18 @@
 ﻿<Page x:Class="ItLabs.Views.RegisterPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:ItLabs.Views"
-        xmlns:conv="clr-namespace:ItLabs.Converters"
-        xmlns:control="clr-namespace:ItLabs.UserControls"
-        xmlns:vm="clr-namespace:ItLabs.ViewModels"
-        mc:Ignorable="d"
-        d:Width="1920"
-        d:Height="1080"
-        Background="Black"
-        Title="RegisterPage">
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ItLabs.Views"
+      xmlns:conv="clr-namespace:ItLabs.Converters"
+      xmlns:control="clr-namespace:ItLabs.UserControls"
+      xmlns:vm="clr-namespace:ItLabs.ViewModels"
+      mc:Ignorable="d"
+      d:Width="1920"
+      d:Height="1080"
+      Background="Black"
+      Title="RegisterPage"
+      SizeChanged="OnPageSizeChanged">
     <Page.DataContext>
         <vm:RegisterViewModel/>
     </Page.DataContext>
@@ -22,26 +23,26 @@
         <BitmapImage x:Key="IWT" UriSource="/Source/IWT_logo.png"/>
         <BitmapImage x:Key="RED" UriSource="/Source/RED_logo.png"/>
     </Page.Resources>
-    <Viewbox>
+    <Viewbox Stretch="Fill">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="1.5*" MinWidth="270"/>
-                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="1.5*" MinWidth="270"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="0*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
-
             </Grid.RowDefinitions>
-            
-            <control:PDFbar Grid.Column="0" ImageSource="{StaticResource BACK1}" IconSource="{StaticResource IWT}" ButtonContent="Просмотреть PDF-файл" ViewPdfCommand="{Binding OpenPdfIWTCommand}" />
-            <control:PDFbar Grid.Column="1" ImageSource="{StaticResource BACK2}" IconSource="{StaticResource RED}" ButtonContent="Просмотреть PDF-файл" ViewPdfCommand="{Binding OpenPdfREDCommand}"/>
 
-            <StackPanel Grid.Column="3" MaxWidth="730" VerticalAlignment="Center" HorizontalAlignment="Center" Height="964" Width="730">
+            <control:PDFbar x:Name="PDFbar1" Grid.Column="0" Grid.Row="1" MinWidth="320px" ImageSource="{StaticResource BACK1}" IconSource="{StaticResource IWT}" ButtonContent="Просмотреть PDF-файл" ViewPdfCommand="{Binding OpenPdfIWTCommand}" />
+            
+            <control:PDFbar x:Name="PDFbar2" Grid.Column="1" Grid.Row="1" MinWidth="320px" ImageSource="{StaticResource BACK2}" IconSource="{StaticResource RED}" ButtonContent="Просмотреть PDF-файл" ViewPdfCommand="{Binding OpenPdfREDCommand}"/>
+
+            <StackPanel x:Name="MainStackPanel" Grid.Column="3" Grid.Row="1" MaxWidth="730" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="ХОТИТЕ ПОСМОТРЕТЬ КАТАЛОГ ПРОДУКЦИИ?"
                            TextWrapping="Wrap"
                            FontSize="42"
@@ -98,7 +99,7 @@
                 <Grid>
                     <Button Style="{StaticResource ConfirmBtn}" Click="Button_Click" Command="{Binding SendingFormCommand}" VerticalAlignment="Stretch"
                             HorizontalAlignment="Stretch" Content="Подтвердить данные"
-                            Margin="0 45" FontSize="32" FontFamily="{StaticResource MontserratSemiBold}" Height="100"/>
+                            Margin="0 45" FontSize="32" FontFamily="{StaticResource MontserratSemiBold}" Height="122"/>
                 </Grid>
             </StackPanel>
 

@@ -155,13 +155,19 @@ namespace ItLabs.ViewModels
 
         private void OpenPdfFile1()
         {
-            string pdfPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Source", "Каталог_RED.pdf");
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDirectory = Path.GetFullPath(Path.Combine(basePath, @"..\..\"));
+            string pdfPath = Path.Combine(projectDirectory, "Source", "Каталог_IWT.pdf");
+
             OpenPDF(pdfPath);
         }
 
         private void OpenPdfFile2()
         {
-            string pdfPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Source", "Каталог_IWT.pdf");
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDirectory = Path.GetFullPath(Path.Combine(basePath, @"..\..\"));
+            string pdfPath = Path.Combine(projectDirectory, "Source", "Каталог_RED.pdf");
+
             OpenPDF(pdfPath);
         }
 
