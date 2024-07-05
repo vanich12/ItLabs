@@ -89,13 +89,8 @@
                     <TextBox Style="{StaticResource CodeInput}" Width="81" Height="140"  Foreground="White" Margin="21 0" FontSize="24" TextAlignment="Center"
                              Text="{Binding Code3,UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
-                <TextBlock HorizontalAlignment="Center" 
-                           Visibility="{Binding ErrorMessage, Converter={StaticResource ValidToVisibilityConverter}}" 
-                           Text="{Binding ErrorMessage}"
-                           Foreground="red"
-                           FontSize="16" 
-                           Margin="0 0 0 30" />
-                <Button Style="{StaticResource ConfirmBtn}" Width="{Binding ActualWidth}" Height="100" Command="{Binding ConfirmCommand}" Content="Подтвердить номер" FontSize="32" FontWeight="SemiBold" Click="Button_Click"/>
+                <control:ErrorMessage HorizontalAlignment="Center" Margin="0 0 0 30" Text="{Binding ErrorMessage}"/>
+                <Button Style="{StaticResource ConfirmBtn}" Width="{Binding ActualWidth}" Height="122" Command="{Binding ConfirmCommand}" Content="Подтвердить номер" FontSize="32" FontWeight="SemiBold" Click="Button_Click"/>
             <StackPanel HorizontalAlignment="Center">
                     <TextBlock x:Name="RepeatCode"  FontFamily="{StaticResource MontserratLight}" HorizontalAlignment="Center" Text="Прислать код повторно" FontSize="28" Foreground="Gray"  
                            TextWrapping="Wrap" TextAlignment="Center" Margin="0 41 0 0"/>

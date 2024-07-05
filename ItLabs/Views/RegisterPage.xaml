@@ -64,27 +64,15 @@
                 <StackPanel Margin="0 85 0 0">
                     <Grid>
                         <TextBox Tag="Фамилия, имя, отчество" Text="{Binding FullName, UpdateSourceTrigger=PropertyChanged}" FontSize="24" FontFamily="{StaticResource MontserratLight}" Style="{StaticResource TextBoxWithPlaceholder}"/>
-                        <TextBlock Text="{Binding FullNameMessage}" 
-                            Visibility="{Binding FullNameMessage, Converter={StaticResource ValidToVisibilityConverter}}"
-                            Foreground="Red" 
-                            FontSize="12"
-                            Margin="0,90,0,0" />
+                        <control:ErrorMessage  Margin="0,90,0,0" Text="{Binding FullNameMessage}"/>
                     </Grid>
                     <Grid>
                         <TextBox Tag="Ваш телефон" Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}" FontSize="24" FontFamily="{StaticResource MontserratLight}" Style="{StaticResource TextBoxWithPlaceholder}" />
-                        <TextBlock Text="{Binding PhoneMessage}" 
-                                   Visibility="{Binding PhoneMessage, Converter={StaticResource ValidToVisibilityConverter}}"
-                                   Foreground="Red" 
-                                   FontSize="12"
-                                   Margin="0,90,0,0" />
+                        <control:ErrorMessage  Margin="0,90,0,0" Text="{Binding PhoneMessage}"/>
                     </Grid>
                     <Grid>
                         <TextBox Tag="E-mail" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" FontSize="24" FontFamily="{StaticResource MontserratLight}" Style="{StaticResource TextBoxWithPlaceholder}" />
-                        <TextBlock Text="{Binding EmailMessage}"
-                                   Visibility="{Binding EmailMessage, Converter={StaticResource ValidToVisibilityConverter}}"
-                                   Foreground="Red" 
-                                   FontSize="12"
-                                   Margin="0,90,0,0" />
+                        <control:ErrorMessage  Margin="0,90,0,0" Text="{Binding EmailMessage}"/>
                     </Grid>
                 </StackPanel>
 

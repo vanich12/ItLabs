@@ -120,6 +120,9 @@
     <Compile Include="Converters\ErrorVisibilityConverter.cs" />
     <Compile Include="Converters\ParentActualWidthToMinWidthConverter.cs" />
     <Compile Include="Converters\ValidToVisibilityConverter.cs" />
+    <Compile Include="UserControls\ErrorMessage.xaml.cs">
+      <DependentUpon>ErrorMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\PDFbar.xaml.cs">
       <DependentUpon>PDFbar.xaml</DependentUpon>
     </Compile>
@@ -138,6 +141,10 @@
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ErrorMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
