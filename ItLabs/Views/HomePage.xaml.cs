@@ -25,10 +25,10 @@ namespace ItLabs.Views
             InitializeComponent();
         }
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-           NavigationService.Navigate(new RegisterPage());
-        }
+        //private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        //{
+        //   NavigationService.Navigate(new RegisterPage());
+        //}
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
@@ -47,5 +47,10 @@ namespace ItLabs.Views
                 MainStackPanel.Margin = new Thickness(0);
             }
         }
+
+        //private void Page_MouseDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    NavigationService.Navigate(new RegisterPage());
+        //}
     }
 }

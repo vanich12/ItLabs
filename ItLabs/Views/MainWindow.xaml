@@ -4,13 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ItLabs.Views"
+          xmlns:utils="clr-namespace:ItLabs.Utilities"
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanResize"
         mc:Ignorable="d"
         KeyDown="MainWindow_KeyDown"
-        Title="MainWindow"  Background="Black">
+        Title="MainWindow"  Background="Black"
+        >
     <Grid>
-        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

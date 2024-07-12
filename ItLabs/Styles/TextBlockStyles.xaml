@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Специфический стиль для TextBlock с ключом -->
+    <Style x:Key="RoundedTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="Foreground" Value="#aeaeae"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Глобальный стиль для всех TextBlock -->
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="{StaticResource MontserratExtraBoldItalic}" />
+    </Style>
+
+</ResourceDictionary>

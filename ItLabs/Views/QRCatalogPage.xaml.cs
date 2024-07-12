@@ -25,22 +25,21 @@ namespace ItLabs.Views
         public QRCatalogPage()
         {
             InitializeComponent();
-            StartTime();
         }
 
-        private void StartTime()
-        { 
-            _timer = new DispatcherTimer();
-            _timer.Interval = TimeSpan.FromSeconds(20);
-            // подписка на специальное событие, которое срабатывает по завершению интервала
-            _timer.Tick += Timer_Tick;
-            _timer.Start();
-        }
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            _timer.Stop();
-            NavigationService.Navigate(new HomePage());    
-        }
+        //private void StartTime()
+        //{ 
+        //    _timer = new DispatcherTimer();
+        //    _timer.Interval = TimeSpan.FromSeconds(20);
+        //    // подписка на специальное событие, которое срабатывает по завершению интервала
+        //    _timer.Tick += Timer_Tick;
+        //    _timer.Start();
+        //}
+        //private void Timer_Tick(object sender, EventArgs e)
+        //{
+        //    _timer.Stop();
+        //    NavigationService.Navigate(new HomePage());    
+        //}
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {

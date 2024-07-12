@@ -4,25 +4,14 @@ using System.Windows.Controls;
 
 namespace ItLabs.Views
 {
-    public partial class Confirmation : Page
+    public partial class ConfirmationPage : Page
     {
-        private ConfirmationViewModel _viewModel;
 
-        public Confirmation()
+        public ConfirmationPage()
         {
             InitializeComponent();
-            _viewModel = new ConfirmationViewModel();
-            DataContext = _viewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            _viewModel.ConfirmCommand.Execute(null);
-            if (_viewModel.IsConfirmed)
-            {
-                NavigationService.Navigate(new QRCatalogPage());
-            }
-        }
         //что то на подобии адаптива
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {

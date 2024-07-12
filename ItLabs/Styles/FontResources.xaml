@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FontFamily x:Key="MontserratRegular">/ItLabs;component/Fonts/Montserrat-Regular.ttf#Montserrat</FontFamily>
+    <FontFamily x:Key="MontserratLight">/ItLabs;component/Fonts/Montserrat-Light.ttf#Montserrat</FontFamily>
+    <FontFamily x:Key="MontserratItalic">/ItLabs;component/Fonts/Montserrat-Italic.ttf#Montserrat</FontFamily>
+    <FontFamily x:Key="MontserratBoldItalic">/ItLabs;component/Fonts/Montserrat-BoldItalic.ttf#Montserrat</FontFamily>
+    <FontFamily x:Key="MontserratExtraBoldItalic">/ItLabs;component/Fonts/Montserrat-ExtraBoldItalic.ttf#Montserrat</FontFamily>
+    <FontFamily x:Key="MontserratBold">/ItLabs;component/Fonts/Montserrat-Bold.ttf#Montserrat Bold</FontFamily>
+    <FontFamily x:Key="MontserratMedium">/ItLabs;component/Fonts/Montserrat-Medium.ttf#Montserrat Medium</FontFamily>
+    <FontFamily x:Key="MontserratSemiBold">/ItLabs;component/Fonts/Montserrat-SemiBold.ttf#Montserrat Semi Bold</FontFamily>
+</ResourceDictionary>

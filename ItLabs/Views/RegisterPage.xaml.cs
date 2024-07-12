@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Unity;
 
 namespace ItLabs.Views
 {
@@ -21,12 +22,9 @@ namespace ItLabs.Views
     /// </summary>
     public partial class RegisterPage : Page
     {
-        private RegisterViewModel _viewModel;
         public RegisterPage()
         {
             InitializeComponent();
-            _viewModel = new RegisterViewModel();
-            DataContext = _viewModel;
         }
 
         private void OnPageSizeChanged(object sender, SizeChangedEventArgs e)
@@ -39,7 +37,6 @@ namespace ItLabs.Views
                 MainStackPanel.Margin = new Thickness(20);
                 Grid.SetColumn(MainStackPanel,2);
                 Grid.SetColumnSpan(MainStackPanel, 3);
-
             }
             else
             {
@@ -51,15 +48,5 @@ namespace ItLabs.Views
                 MainStackPanel.Margin = new Thickness(20);
             }
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            _viewModel.SendingFormCommand.Execute(null);
-            if (_viewModel.IsRegistered)
-            {
-                NavigationService.Navigate(new Confirmation());
-            }
-           
-        }
-
     }
 }

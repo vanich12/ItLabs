@@ -9,6 +9,7 @@
           d:Width="1920"
           d:Height="1080"
       Title="QRCatalogPage" 
+      DataContext="{Binding QRCatalogViewModel, Source={StaticResource Locator}}"
       SizeChanged="Page_SizeChanged"
       Background="Black">
     <Page.Resources>
