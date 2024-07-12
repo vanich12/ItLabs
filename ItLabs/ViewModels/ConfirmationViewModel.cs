@@ -36,7 +36,6 @@ namespace ItLabs.ViewModels
                 OnPropertyChanged();
             }
         }
-
         public string Code1
         {
             get => _code1;
@@ -49,7 +48,6 @@ namespace ItLabs.ViewModels
                 }
             }
         }
-
         public string Code2
         {
             get => _code2;
@@ -62,7 +60,6 @@ namespace ItLabs.ViewModels
                 }
             }
         }
-
         public string Code3
         {
             get => _code3;
